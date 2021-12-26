@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Scanner;
 import java.util.UUID;
 
 @Service
@@ -34,5 +35,9 @@ public class EmployeeService {
 
     public void deleteEmployee(Long id){
         employeeRepo.deleteEmployeeById(id);
+    }
+
+    public Employee updateEmployee(Employee employee) {
+        return employeeRepo.save(employee);
     }
 }
